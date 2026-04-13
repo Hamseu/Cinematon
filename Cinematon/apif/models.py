@@ -4,13 +4,18 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    pass
+    class Meta:
+        db_table = "users"
+
 
 class Cinema(models.Model):
     cinemas_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=128)
     city = models.CharField(max_length=32)
     street = models.CharField(max_length=64)
+    class Meta:
+        db_table = "cinemas"
+        managed = False
 
 class Hall(models.Model):
     hall_id = models.IntegerField(primary_key=True)
@@ -28,10 +33,12 @@ class Hall(models.Model):
     class Meta:
         constraints = [
             models.CheckConstraint(
-                check=models.Q(seats_number=models.F("rows_number") * models.F("seats_for_row")),
+                condition=models.Q(seats_number=models.F("rows_number") * models.F("seats_for_row")),
                 name="check_seats_match"
             )
         ]
+        db_table = "halls"
+        managed = False
 
 class Film(models.Model):
     film_id = models.IntegerField(primary_key=True)
@@ -40,6 +47,9 @@ class Film(models.Model):
     description = models.TextField(null=True, blank=True)
     release_year = models.SmallIntegerField()
     length = models.SmallIntegerField()
+    class Meta:
+        db_table = "films"
+        managed = False
 
 class Session(models.Model):
     session_id = models.IntegerField(primary_key=True)
@@ -63,10 +73,12 @@ class Session(models.Model):
     class Meta:
         constraints = [
             models.CheckConstraint(
-                check=models.Q(end_time__gt=models.F("start_time")),
+                condition=models.Q(end_time__gt=models.F("start_time")),
                 name="check_time_order"
             )
         ]
+        db_table = "sessions"
+        managed = False
 
 class BookedTicket(models.Model):
     ticket_id = models.IntegerField(primary_key=True)
@@ -91,3 +103,5 @@ class BookedTicket(models.Model):
                 name="unique_seat_per_session"
             )
         ]
+        db_table = "booked_tickets"
+        managed = False
