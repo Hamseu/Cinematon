@@ -22,12 +22,14 @@ from .views import (
     CinemaDetailView,
     CinemasDetailView,
     RegisterAPIView,
+    LoginView,
+    LogoutView
 )
-
 urlpatterns = [
     path('register/', RegisterAPIView.as_view()),
-    path('login/', TokenObtainPairView.as_view(), name='login'),
+    path('login/', LoginView, name='login'),
     path('login/refresh/', TokenRefreshView.as_view(), name='refresh'),
+    path('logout/', LogoutView, name = 'logout'),
 
     path('films/', FilmsListView),
     path('films/<int:filme_id>/', FilmDetailView),
