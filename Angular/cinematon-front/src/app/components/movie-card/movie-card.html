@@ -2,10 +2,11 @@
   <h3>{{ film.title }}</h3>
 
   <p>{{ film.genre }}</p>
+  <p>{{film.description}} </p>
 
   <p>Year: {{ film.release_year }}</p>
 
   <p>Length: {{ film.length }} min</p>
 
-  <button [routerLink]="['/ticket', film.id]">Buy Ticket</button>
+  <button [routerLink]="['/ticket', film.film_id]">Buy Ticket</button>
 </div>

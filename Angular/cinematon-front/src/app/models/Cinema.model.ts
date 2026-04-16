@@ -1,5 +1,5 @@
 export interface Cinema{
-    id: number,
+    cinemas_id: number,
     name: string,
     city: string,
     street: string

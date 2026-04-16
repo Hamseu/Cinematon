@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Film } from '../../models/Film.model';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MovieCardComponent } from '../../components/movie-card/movie-card';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Httpserf } from '../../httpserf';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +14,12 @@ import { MovieCardComponent } from '../../components/movie-card/movie-card';
   styleUrl: './home.css',
 })
 export class Home {
-  films: Film[] = [
+  http = inject(Httpserf);
+  
+  films2 = toSignal(this.http.getFilms(), { initialValue: [] }); 
+  
+
+  /** films: Film[] = [
     {
       id: 1,
       title: 'Interstellar',
@@ -29,5 +36,5 @@ export class Home {
       release_year: 2022,
       length: 140,
     },
-  ];
+  ]; */
 }

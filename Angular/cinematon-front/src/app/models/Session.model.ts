@@ -1,10 +1,10 @@
 import { Time } from "@angular/common";
 
 export interface Session{
-    id: number,
+    session_id: number,
     start_time: string,
     end_time: string,
-    film_id: number,
-    hall_id: number,
+    film: number,
+    hall: number,
     cost: number
 }

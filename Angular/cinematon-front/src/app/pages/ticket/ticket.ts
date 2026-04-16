@@ -16,6 +16,7 @@ export class TicketComponent {
     this.filmId = Number(this.route.snapshot.paramMap.get('id'));
   }
 
+  
   buyTicket() {
     alert('Ticket successfully purchased!');
   }

@@ -4,12 +4,11 @@
 
 <div>
   <label>Select seat:</label>
-  <select>
-    <option>A1</option>
-    <option>A2</option>
-    <option>B1</option>
-    <option>B2</option>
-  </select>
+  <div id = "session-selector">
+    @for(ticket of tickets(); track ticket.ticket_id){
+       <button (onClick) = "bookTicket">{{ticket.ticket_id}}</button>
+      }
+  </div>
 </div>
 
 <br />

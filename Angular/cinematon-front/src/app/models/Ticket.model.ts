@@ -1,7 +1,7 @@
 export interface Ticket{
-    id: number,
-    user_id: number,
-    session_id: number,
+    ticket_id: number,
+    user: number,
+    session: number,
     seat: number,
     row: number,
     payment: number

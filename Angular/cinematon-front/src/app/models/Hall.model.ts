@@ -1,6 +1,6 @@
 export interface Hall{
-    id: number,
-    cinema_id: number,
+    hall_id: number,
+    cinema: number,
     seats_total: number,
     rows: number,
     seats_for_row: number
