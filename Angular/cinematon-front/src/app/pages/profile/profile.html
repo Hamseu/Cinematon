@@ -1,0 +1,14 @@
+<h2>User Profile</h2>
+
+<div class="user-info">
+  <p><b>Username:</b> {{ user.username }}</p>
+  <p><b>Email:</b> {{ user.email }}</p>
+</div>
+
+<hr />
+
+<h3>My Tickets</h3>
+
+<div *ngFor="let ticket of tickets">
+  <p>🎬 {{ ticket.filmTitle }} - Seat: {{ ticket.seat }}</p>
+</div>
