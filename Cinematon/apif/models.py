@@ -43,6 +43,7 @@ class Hall(models.Model):
 class Film(models.Model):
     film_id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=128)
+    imageurl = models.CharField(max_length = 255)
     genre = models.CharField(max_length=128, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     release_year = models.SmallIntegerField()

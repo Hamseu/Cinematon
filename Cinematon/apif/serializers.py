@@ -4,6 +4,7 @@ from .models import User, Film, Hall, Session, BookedTicket, Cinema
 class FilmSerializer(serializers.Serializer):
     film_id = serializers.IntegerField(read_only = True)
     title = serializers.CharField(max_length=128)
+    imageurl = serializers.CharField(max_length=255)
     genre = serializers.CharField(max_length=128, required=False, allow_null=True, allow_blank=True)
     description = serializers.CharField(required=False, allow_null=True, allow_blank=True)
     release_year = serializers.IntegerField()
