@@ -1,0 +1,17 @@
+<div class="seats">
+
+  <div class="screen">SCREEN</div>
+
+  @for (row of [].constructor(8); let i = $index) {
+    <div class="row">
+      @for (col of [].constructor(8); let j = $index) {
+        <div 
+          class="seat"
+          [class.selected]="selectedSeat === (i + '-' + j)"
+          (click)="selectSeat(i + '-' + j)">
+        </div>
+      }
+    </div>
+  }
+
+</div>

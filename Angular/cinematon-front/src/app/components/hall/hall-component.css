@@ -1,0 +1,50 @@
+.seats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #020617;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.seat {
+  width: 32px;
+  height: 32px;
+  background: #334155;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* hover */
+.seat:hover {
+  background: #64748b;
+  transform: scale(1.1);
+}
+
+/* выбранное место */
+.seat.selected {
+  background: #22c55e;
+}
+
+/* занятое место (если добавишь позже) */
+.seat.taken {
+  background: #ef4444;
+  cursor: not-allowed;
+}
+
+/* экран сверху */
+.screen {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 8px;
+  background: #1e293b;
+  border-radius: 6px;
+  font-size: 14px;
+}
