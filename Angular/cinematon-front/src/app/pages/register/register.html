@@ -15,6 +15,7 @@
             type="text" 
             id="username" 
             name="username"
+            [(ngModel)] = "username"
             placeholder="Введите ваше имя"
             required>
         </div>
@@ -29,6 +30,7 @@
             type="email" 
             id="email" 
             name="email"
+            [(ngModel)] = "email"
             placeholder="example@mail.com"
             required>
         </div>
@@ -43,27 +45,15 @@
             type="password" 
             id="password" 
             name="password"
+            [(ngModel)] = "password"
             placeholder="Минимум 6 символов"
             required>
         </div>
       </div>
 
-      
-     <!--  <div class="form-group">
-        <label for="confirmPassword">Подтвердите пароль</label>
-        <div class="input-icon">
-          <span class="icon">✓</span>
-          <input 
-            type="password" 
-            id="confirmPassword" 
-            name="confirmPassword"
-            placeholder="Введите пароль еще раз"
-            required>
-        </div>
-      </div> -->
-      
       <button 
         type="submit" 
+        (click) = "Register()"
         class="register-btn"
       >
         Зарегистрироваться
@@ -72,7 +62,7 @@
      
     </form>
     <div class="register-footer">
-      <p>Уже есть аккаунт? <a routerLink="/login">Войти</a></p>
+      <p>Уже есть аккаунт? <a [routerLink]="['/login', ]">Войти</a></p>
     </div>
   </div>
 </div>

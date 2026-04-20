@@ -14,13 +14,15 @@ import { User } from './models/User.model';
 })
 export class Httpserf {
   private http = inject(HttpClient);
-  private littleURL = 'http://127.0.0.1:8000';
+  private littleURL = 'http://localhost:8000';
 
-  loading = signal(true);
 
 
   register(data: any): Observable<User> {
     return this.http.post<User>(`${this.littleURL}/register/`, data);
+  }
+  loadUser(): Observable<User>{
+    return this.http.get<User>(`${this.littleURL}/me/`, {withCredentials: true});
   }
 
   login(data: any): Observable<any> {

@@ -1,14 +1,17 @@
 <h2>User Profile</h2>
-
+@if(user(); as u){
 <div class="user-info">
-  <p><b>Username:</b> {{ user.username }}</p>
-  <p><b>Email:</b> {{ user.email }}</p>
+  <p><b>Username:</b> {{ u.username }}</p>
+  <p><b>Email:</b> {{ u.email }}</p>
 </div>
-
+}
 <hr />
 
 <h3>My Tickets</h3>
 
-<div *ngFor="let ticket of tickets">
-  <p>🎬 {{ ticket.filmTitle }} - Seat: {{ ticket.seat }}</p>
-</div>
+@for(ticket of normalTickets(); track ticket.ticket_id) {
+  @if (ticket; as t) {
+<div class = "ticket-container">
+  <p>🎬{{t.cinema}}, {{ (t?.hall ?? 0) % 10 }} <br> {{ t.film }} - <span class = "place"> Row: {{t.row}}, Seat: {{ t.seat }}</span> <span class = "Time"> {{t.session_time | date: "MM.dd HH:mm"}}</span></p>
+</div> }
+}

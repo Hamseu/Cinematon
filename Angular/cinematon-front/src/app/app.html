@@ -1,10 +1,30 @@
-<div>
+<!--<div>
 <ul>
 <li > <a [routerLink] = "['/']">Home</a> </li>
 <li > <a [routerLink] = "['/profile']">Profile</a> </li>
 <li> <a [routerLink] = "['/register']">Register</a> </li>
 <li> <a [routerLink] = "['/login']">Login</a> </li>
 </ul>
-<button id = "logoutClass" (click) = logoutF>Logout</button> 
+<button id = "logoutClass" (click) = logoutF()>Logout</button> 
+</div> -->
+
+
+<div class = "grid-container">
+  <ul>
+    <li><a [routerLink]="['/']">Home</a></li>
+
+    @if (!user()) {
+      <li><a [routerLink]="['/register']">Register</a></li>
+      <li><a [routerLink]="['/login']">Login</a></li>
+    }
+    @if (user()) {
+      <li><a [routerLink]="['/profile']">Profile</a></li>
+    }
+  </ul>
+@if (user()) {
+  <button id="logoutClass" (click)="logoutF()">
+    Logout
+  </button>
+}
 </div>
 <router-outlet></router-outlet>
