@@ -202,3 +202,10 @@ class MeAPIView(APIView):
     def get(self, request):
         serializer = UserSerializer(request.user)
         return Response(serializer.data)
+
+class TicketBySessionAPIView(APIView):
+
+    def get(self, request, session_id):
+        tickets = BookedTicket.objects.filter(session=session_id)
+        serializer = TicketSerializer(tickets, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

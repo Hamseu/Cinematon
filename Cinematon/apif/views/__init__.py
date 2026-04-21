@@ -10,7 +10,8 @@ from .cbv import (
    BookedTicketListAPIView,
    BookedTicketDetailAPIView,
    TicketsByUserAPIView,
-   MeAPIView
+   MeAPIView,
+   TicketBySessionAPIView
 )
 
 from .fbv import (filmsview as FilmsListView,

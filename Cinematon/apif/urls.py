@@ -24,7 +24,8 @@ from .views import (
     RegisterAPIView,
     LoginView,
     LogoutView,
-    MeAPIView
+    MeAPIView,
+    TicketBySessionAPIView
 )
 urlpatterns = [
     path('register/', RegisterAPIView.as_view()),
@@ -52,4 +53,5 @@ urlpatterns = [
     path('tickets/', BookedTicketListAPIView.as_view()),
     path('tickets/<int:pk>/', BookedTicketDetailAPIView.as_view()),
     path('tickets/my/', TicketsByUserAPIView.as_view()),
-]
+    path("sessions/<int:session_id>/tickets/", TicketBySessionAPIView.as_view()),
+    ]
