@@ -12,7 +12,7 @@
   <div id = "session-selector">
     @for(session of sessionsWithCinema(); track session.session_id){
        <div class = "session-card">
-        <button [routerLink] = "['hall/', session.hall]" routerLinkActive = "active-button">
+        <button [routerLink] = "['hall', session.hall, session.session_id]" routerLinkActive = "active-button">
             <div class = "session-cinema">{{session.cinema_name}}</div>
            <span class = "halle">Hall {{session.hall % 10}} </span>
            <span class = "times">{{session.start_time | date: "HH:mm"}}-{{session.end_time | date: "HH:mm"}} </span>
@@ -23,7 +23,7 @@
   </div>
 
 
-  <button (click)="buyTicket()">Confirm Purchase</button>
+  <!-- <button (click)="buyTicket()">Confirm Purchase</button>-->
   </div>
 }
   @else{

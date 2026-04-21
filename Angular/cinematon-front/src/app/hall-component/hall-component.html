@@ -1,1 +1,25 @@
-<p>hall-component works!</p>
+@if (!errorer()){
+@if (hall(); as h){    
+<div class="seats">
+
+  <div class="screen">SCREEN</div>
+
+  @for (row of rows(); track $index) {
+    <div class="row">
+      @for (seat of seats(); track $index) {
+        <div 
+          class="seat"
+          [class.taken]="bookedSeatSet().has(row + '-' + seat)"
+          [class.selected]="selectedSeats().has(row + '-' + seat)"
+          (click)="selectSeat(row , seat)">
+        </div>
+      }
+    </div>
+  }
+<button class = "purchase-button" (click)="buyTicket()">Confirm Purchase</button>
+</div>
+}
+}
+@else {
+    <div class = "errors">{{errorer()}}</div>
+}

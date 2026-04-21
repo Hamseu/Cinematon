@@ -52,7 +52,7 @@ export class Ticket {
 
 
   
-  buyTicket() {
+ /* buyTicket() {
     alert('Ticket successfully purchased!');
-  }
+  }*/
 }

@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './movie-card.html',
+  styleUrl: './movie-card.css',
 })
 export class MovieCardComponent {
   @Input() film!: Film;

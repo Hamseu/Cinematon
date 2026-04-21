@@ -1,0 +1,15 @@
+.movie-card {
+  min-width: 220px;
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+}

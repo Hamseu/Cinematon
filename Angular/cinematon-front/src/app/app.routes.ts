@@ -15,7 +15,7 @@ export const routes: Routes = [
     component: Ticket,
     children: [
       {
-      path: 'hall/:id',
+      path: 'hall/:id/:sessionId',
       component: HallComponent,
       }
     ]

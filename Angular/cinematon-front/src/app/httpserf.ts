@@ -108,6 +108,12 @@ export class Httpserf {
     });
   }
 
+  getTicketsBySession(id:number): Observable<Ticket[]> {
+    return this.http.get<Ticket[]>(`${this.littleURL}/sessions/${id}/tickets/`, {
+      withCredentials: true
+    });
+  }
+
   getTicket(id: number): Observable<Ticket> {
     return this.http.get<Ticket>(
       `${this.littleURL}/tickets/${id}/`,
