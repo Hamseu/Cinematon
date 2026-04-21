@@ -1,0 +1,24 @@
+/* Контейнер со списком фильмов */
+:host {
+  display: block;
+  padding: 30px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: 100vh;
+}
+
+/* Сетка карточек */
+:host {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Чуть воздуха для карточек */
+app-movie-card {
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+app-movie-card:hover {
+  transform: scale(1.03);
+}

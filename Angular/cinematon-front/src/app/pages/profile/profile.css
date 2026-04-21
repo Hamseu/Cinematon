@@ -1,0 +1,91 @@
+/* Общий контейнер */
+:host {
+  display: block;
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* Заголовки */
+h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+h3 {
+  margin-top: 30px;
+  font-size: 22px;
+  color: #334155;
+}
+
+/* Блок пользователя */
+.user-info {
+  background: white;
+  padding: 20px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  max-width: 400px;
+}
+
+.user-info p {
+  margin: 8px 0;
+  color: #475569;
+  font-size: 15px;
+}
+
+/* Разделитель */
+hr {
+  margin: 30px 0;
+  border: none;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+/* Контейнер билетов */
+.ticket-container {
+  background: white;
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+  transition: all 0.25s ease;
+  border-left: 4px solid #6366f1;
+}
+
+/* Hover эффект */
+.ticket-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Текст билета */
+.ticket-container p {
+  margin: 0;
+  font-size: 15px;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+/* Доп. стили */
+.place {
+  color: #0ea5e9;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.Time {
+  float: right;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+  .Time {
+    display: block;
+    float: none;
+    margin-top: 5px;
+  }
+}

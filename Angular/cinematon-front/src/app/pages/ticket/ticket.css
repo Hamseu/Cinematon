@@ -1,0 +1,138 @@
+/* Общий контейнер */
+.grid-container.half-half {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #e2e8f0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Левая часть (фильм) */
+.movie-screen {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* Заголовок */
+.film-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #f8fafc;
+}
+
+/* Жанры */
+.genres {
+  color: #38bdf8;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Описание */
+.descritption-plain {
+  color: #cbd5f5;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Длительность */
+.length {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+/* Select text */
+#Offer {
+  margin: 20px 0 10px;
+  font-size: 18px;
+  color: #e2e8f0;
+}
+
+/* Сессии */
+#session-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+/* Карточка */
+.session-card {
+  background: #020617;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.25s;
+  border: 1px solid #1e293b;
+}
+
+/* Кнопка */
+.session-card button {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  border: none;
+  color: #e2e8f0;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Hover */
+.session-card:hover {
+  transform: translateY(-4px);
+  border-color: #6366f1;
+  box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+}
+
+/* Активная кнопка */
+.active-button {
+  background: #6366f1 !important;
+  color: white !important;
+}
+
+/* Внутренности */
+.session-cinema {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.halle {
+  display: block;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.times {
+  display: block;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #22c55e;
+}
+
+.payment {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+/* Правая часть (бронь) */
+.right-partbooking {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 20px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .grid-container.half-half {
+    grid-template-columns: 1fr;
+  }
+}
