@@ -14,6 +14,7 @@
             type="text" 
             id="username" 
             name="username"
+            [(ngModel)] = "username"
             placeholder="Введите ваше имя"
             required>
         </div>
@@ -28,6 +29,7 @@
             type="password" 
             id="password" 
             name="password"
+            [(ngModel)] = "password"
             placeholder="Минимум 6 символов"
             required>
         </div>
@@ -39,7 +41,7 @@
       <button 
         type="submit" 
         class="login-btn"
-        (click) = "LogIn"
+        (click) = "LogIn()"
       >
         Войти
       </button>

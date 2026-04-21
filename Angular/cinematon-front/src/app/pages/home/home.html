@@ -1,1 +1,3 @@
-<app-movie-card *ngFor="let film of films2()" [film]="film"> </app-movie-card>
+@for(film of films2(); track film.film_id){
+<app-movie-card [film]="film"> </app-movie-card>
+}

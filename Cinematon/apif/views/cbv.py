@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 
 from ..models import Hall, Session, Film, BookedTicket
-from ..serializers import HallSerializer, SessionSerializer, FilmSerializer, TicketSerializer
+from ..serializers import UserSerializer, HallSerializer, SessionSerializer, FilmSerializer, TicketSerializer
 
 class HallListAPIView(APIView):
 
@@ -195,3 +195,10 @@ class BookedTicketDetailAPIView(APIView):
 
         ticket.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+class MeAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        serializer = UserSerializer(request.user)
+        return Response(serializer.data)
