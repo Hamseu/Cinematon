@@ -19,6 +19,7 @@ from .fbv import (filmsview as FilmsListView,
                   cinemaview as  CinemaDetailView,
                   cinemasview as CinemasDetailView,
                   login as LoginView,
-                  logout as LogoutView)
+                  logout as LogoutView,
+                  refresh_token as TokenRefreshView)
 
 from .generic import RegisterAPIView

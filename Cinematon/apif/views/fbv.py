@@ -111,3 +111,35 @@ def logout(request):
     response = Response({"message": "Logged out"})
     response.delete_cookie("access")
     return response
+
+@api_view(['POST'])
+def refresh_token(request):
+    refresh_token = request.COOKIES.get('refresh')
+
+    if not refresh_token:
+        return Response(
+            {"detail": "Refresh token missing"},
+            status=status.HTTP_401_UNAUTHORIZED
+        )
+
+    try:
+        refresh = RefreshToken(refresh_token)
+        access_token = str(refresh.access_token)
+
+    except Exception:
+        return Response(
+            {"detail": "Invalid refresh token"},
+            status=status.HTTP_401_UNAUTHORIZED
+        )
+
+    response = Response({"access": access_token}, status=status.HTTP_200_OK)
+    response.set_cookie(
+        key="access",
+        value=access_token,
+        httponly=True,
+        secure=False,
+        samesite="Lax",
+        path="/"
+    )
+
+    return response

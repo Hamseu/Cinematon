@@ -180,7 +180,7 @@ class BookedTicketDetailAPIView(APIView):
 
     def get_object(self, pk):
         try:
-            return BookedTicket.objects.get(pk=pk)
+            return BookedTicket.objects.get(ticket_id=pk)
         except BookedTicket.DoesNotExist:
             return None
 
