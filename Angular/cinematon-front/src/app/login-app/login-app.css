@@ -1,5 +1,4 @@
-
-.register-container {
+.login-container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -8,8 +7,7 @@
   padding: 20px;
 }
 
-
-.register-card {
+.login-card {
   background: white;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -19,32 +17,27 @@
   animation: slideUp 0.5s ease-out;
 }
 
-
-
-
-.register-header {
+.login-header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   padding: 30px;
   text-align: center;
 }
 
-.register-header h2 {
+.login-header h2 {
   font-size: 28px;
   margin-bottom: 10px;
   font-weight: 700;
 }
 
-.register-header p {
+.login-header p {
   font-size: 14px;
   opacity: 0.9;
 }
 
-
-.register-form {
+.login-form {
   padding: 30px;
 }
-
 
 .form-group {
   margin-bottom: 20px;
@@ -101,7 +94,6 @@
   border-color: #764ba2;
 }
 
-
 .checkbox-group {
   margin: 20px 0;
 }
@@ -137,7 +129,7 @@
   text-decoration: underline;
 }
 
-.register-btn {
+.login-btn {
   width: 100%;
   padding: 14px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -151,16 +143,16 @@
   margin-top: 10px;
 }
 
-.register-btn:hover:not(:disabled) {
+.login-btn:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
 }
 
-.register-btn:active:not(:disabled) {
+.login-btn:active:not(:disabled) {
   transform: translateY(0);
 }
 
-.register-btn:disabled {
+.login-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
@@ -185,26 +177,24 @@
   border-left: 4px solid #3c3;
 }
 
-
-.register-footer {
+.login-footer {
   padding: 20px 30px 30px;
   text-align: center;
   border-top: 1px solid #eee;
   background: #fafafa;
 }
 
-.register-footer p {
+.login-footer p {
   color: #666;
   font-size: 14px;
 }
 
-.register-footer a {
+.login-footer a {
   color: #667eea;
   text-decoration: none;
   font-weight: 600;
 }
 
-.register-footer a:hover {
+.login-footer a:hover {
   text-decoration: underline;
 }
-
