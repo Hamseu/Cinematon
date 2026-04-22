@@ -6,7 +6,7 @@
   <p class = "genres">{{f.genre}}</p>
 
   <p class = "descritption-plain">{{f.description}}</p>
-  <p class = "length">{{f.length}} </p>
+  <p class = "length">{{f.length}} minutes</p>
   
   <p id = "Offer"> Select a session: </p>
   <div id = "session-selector">
@@ -16,7 +16,7 @@
             <div class = "session-cinema">{{session.cinema_name}}</div>
            <span class = "halle">Hall {{session.hall % 10}} </span>
            <span class = "times">{{session.start_time | date: "HH:mm"}}-{{session.end_time | date: "HH:mm"}} </span>
-           <span class = "payment">{{session.cost}} </span>
+           <span class = "payment">{{session.cost | currency: 'KZT '}} </span>
           </button>
         </div>
       }

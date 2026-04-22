@@ -1,5 +1,5 @@
 import { Component, inject, signal, computed } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Httpserf } from '../httpserf';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -19,6 +19,7 @@ import { map, switchMap } from 'rxjs';
 export class HallComponent {
   route = inject(ActivatedRoute);
   http = inject(Httpserf);
+  router = inject(Router);
 
   private params = toSignal(this.route.paramMap);
 
@@ -111,13 +112,24 @@ bookedSeatSet = computed(() => {
   this.tickets.update(t => [...t, newTicket]);
 }
 
+reloadHall(){
+  const currentUrl = this.router.url;
+  this.router.navigateByUrl('/', {skipLocationChange: true}).then (() => {this.router.navigate([currentUrl]);});
+}
  buyTicket() {
   for (let ticket of this.tickets()) {
     this.http.createTicket(ticket).subscribe({
-      next: () => alert("Thank you for purschase!"),
+      next: () => {
+        
+        this.selectedSeats.set(new Set());
+
+      },
       error: (err) => alert("Failed"+ err)
     });
+    
   }
+  alert("Thank you for purschase!");
+    this.reloadHall();
 
   this.tickets.set([]);
 }

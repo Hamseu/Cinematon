@@ -3,13 +3,15 @@ import { ActivatedRoute, RouterModule , RouterOutlet, RouterLink, RouterLinkActi
 import { CommonModule } from '@angular/common';
 import { Httpserf } from '../../httpserf';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { CurrencyPipe } from '@angular/common';
 import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-ticket',
   standalone: true,
-  imports: [CommonModule, RouterModule, RouterOutlet, RouterLink, RouterLinkActive],
-  templateUrl: './ticket.html'
+  imports: [CommonModule, CurrencyPipe, RouterModule, RouterOutlet, RouterLink, RouterLinkActive],
+  templateUrl: './ticket.html',
+  styleUrl: './ticket.css',
 })
 export class Ticket {
 

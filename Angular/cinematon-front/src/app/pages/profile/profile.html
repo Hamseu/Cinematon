@@ -12,6 +12,6 @@
 @for(ticket of normalTickets(); track ticket.ticket_id) {
   @if (ticket; as t) {
 <div class = "ticket-container">
-  <p>🎬{{t.cinema}}, {{ (t?.hall ?? 0) % 10 }} <br> {{ t.film }} - <span class = "place"> Row: {{t.row}}, Seat: {{ t.seat }}</span> <span class = "Time"> {{t.session_time | date: "MM.dd HH:mm"}}</span></p>
+  <p><span>🎬{{t.cinema}}, {{ (t?.hall ?? 0) % 10 }} <button class = "delete-ticket" (click) = "onDelete(t.ticket_id)">X</button></span><br> {{ t.film }} - <span class = "place"> Row: {{t.row}}, Seat: {{ t.seat }}</span> <span class = "Time"> {{t.session_time | date: "MM.dd HH:mm"}}</span></p>
 </div> }
 }

@@ -1,8 +1,10 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject, computed, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { User } from '../../models/User.model';
-import { Httpserf } from '../../httpserf';
+
+import { Ticket } from '../../models/Ticket.model';
+ import { Httpserf } from '../../httpserf';
 
 @Component({
   selector: 'app-profile',
@@ -15,11 +17,16 @@ export class Profile {
   http = inject(Httpserf);
   user = toSignal(this.http.loadUser());
 
-  tickets = toSignal(this.http.getMyTickets());
+  tickets = signal<Ticket[]>([]);
   sessions = toSignal(this.http.getSessions());
   halls = toSignal(this.http.getHalls());
   cinemas = toSignal(this.http.getCinemas());
   films = toSignal(this.http.getFilms())
+  ngOnInit() {
+  this.http.getMyTickets().subscribe(data => {
+    this.tickets.set(data);
+  });
+}
 
   normalTickets = computed(() => {
        const tickets = this.tickets()
@@ -47,5 +54,8 @@ export class Profile {
       )
        }
   )
-  
+  onDelete(id: number) {
+  this.http.deleteTicket(id).subscribe();
+  this.tickets.update(list => list.filter(t => t.ticket_id !== id));
+}
 }

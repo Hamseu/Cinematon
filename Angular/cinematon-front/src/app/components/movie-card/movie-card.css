@@ -1,9 +1,11 @@
 .movie-card {
   min-width: 220px;
-  background: #1e293b;
+  background: #1f314b;
   padding: 15px;
   border-radius: 10px;
   transition: 0.2s;
+  justify-items: center;
+  height: 70vh;
 }
 
 .card:hover {
@@ -12,4 +14,28 @@
 
 .card h3 {
   margin: 0 0 10px;
+}
+
+.buter {
+  background: linear-gradient(135deg, #ff4d4d, #ff1a75);
+  color: white;
+  border: none;
+  display: block;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.buter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.image{
+  display: block;
+  margin: 0px;
 }

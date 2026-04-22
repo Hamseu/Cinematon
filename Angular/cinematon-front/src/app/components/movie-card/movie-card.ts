@@ -12,4 +12,7 @@ import { RouterModule } from '@angular/router';
 })
 export class MovieCardComponent {
   @Input() film!: Film;
+  onError(event: Event){
+    (event.target as HTMLImageElement).src = 'Defaultim.png';
+  }
 }

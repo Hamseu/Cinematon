@@ -1,0 +1,66 @@
+/* NAVBAR */
+.grid-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px; 
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #1e293b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Список */
+ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ссылки */
+ul li a {
+  text-decoration: none;
+  color: #e2e8f0;
+  font-size: 15px;
+  transition: 0.2s;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* Hover */
+ul li a:hover {
+  background: #1e293b;
+  color: #38bdf8;
+}
+
+/* Активная ссылка (Angular сам добавит класс) */
+a.active {
+  background: #6366f1;
+  color: white;
+}
+
+/* Logout кнопка */
+#logoutClass {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#logoutClass:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Чтобы контент не прилипал к navbar */
+router-outlet + * {
+  display: block;
+  padding: 20px;
+}

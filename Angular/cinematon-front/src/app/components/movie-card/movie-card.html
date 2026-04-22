@@ -1,13 +1,12 @@
 <div class="movie-card">
-  <img [src] = "film.imageurl"> 
+  <img class = "image" [src] = "film.imageurl" (error) = "onError($event)"> 
   <h3>{{ film.title }}</h3>
 
-  <p>{{ film.genre }}</p>
-  <p>{{film.description}} </p>
+  <p class = "outer-genres" >{{ film.genre }}</p>
 
   <p>Year: {{ film.release_year }}</p>
 
   <p>Length: {{ film.length }} min</p>
 
-  <button [routerLink]="['/ticket', film.film_id]">Buy Ticket</button>
+  <button class = "buter" [routerLink]="['/ticket', film.film_id]">Buy Ticket</button>
 </div>
