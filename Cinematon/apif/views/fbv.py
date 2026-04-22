@@ -93,7 +93,7 @@ def login(request):
 
     refresh = RefreshToken.for_user(user)
     access_token = str(refresh.access_token)
-
+    refresh_token = str(refresh)
     response = Response({"message": "Logged in"})
 
     response.set_cookie(
@@ -102,6 +102,15 @@ def login(request):
         httponly=True,
         secure=False,  # True in production
         samesite="Lax"
+    )
+
+    response.set_cookie(
+        key="refresh",
+        value=refresh_token,
+        httponly=True,
+        secure=False,
+        samesite="Lax",
+        path="/"
     )
 
     return response

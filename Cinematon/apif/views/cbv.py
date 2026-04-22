@@ -146,7 +146,7 @@ class SessionsByFilm(APIView):
 
 class FilmByGenre(APIView):
     def get(self, request, genre):
-        films = Film.objects.filter(genre = genre)
+        films = Film.objects.filter(genre__icontains=genre)
         serializer = FilmSerializer(films, many = True)
         return Response(serializer.data)
 
