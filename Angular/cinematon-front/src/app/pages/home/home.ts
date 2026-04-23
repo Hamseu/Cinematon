@@ -16,7 +16,17 @@ import { Httpserf } from '../../httpserf';
 export class Home {
   http = inject(Httpserf);
   
-  films2 = toSignal(this.http.getFilms(), { initialValue: [] }); 
+  films2 = signal<any[]>([]);
+
+ngOnInit() {
+  this.loadFilms();
+}
+
+loadFilms() {
+  this.http.getFilms().subscribe({
+    next: data => this.films2.set(data)
+  });
+}
   
 
   /** films: Film[] = [
